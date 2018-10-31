@@ -30,6 +30,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.util.StringValueResolver;
 
 /**
+ * 简单实现  AliasRegistry 接口
  * Simple implementation of the {@link AliasRegistry} interface.
  * Serves as base class for
  * {@link org.springframework.beans.factory.support.BeanDefinitionRegistry}
@@ -40,10 +41,10 @@ import org.springframework.util.StringValueResolver;
  */
 public class SimpleAliasRegistry implements AliasRegistry {
 
-	/** Logger available to subclasses. */
+	/**记录去用户子类 Logger available to subclasses. */
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	/** Map from alias to canonical name. */
+	/**记录器可用于子类 Map from alias to canonical name. */
 	private final Map<String, String> aliasMap = new ConcurrentHashMap<>(16);
 
 
@@ -84,6 +85,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	}
 
 	/**
+	 * 返回是否允许别名重写 默认返回 true
 	 * Return whether alias overriding is allowed.
 	 * Default is {@code true}.
 	 */
@@ -92,9 +94,10 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	}
 
 	/**
+	 * 确认给定的名称是否注册了给定的别名
 	 * Determine whether the given name has the given alias registered.
-	 * @param name the name to check
-	 * @param alias the alias to look for
+	 * @param name 要检查的名称 the name to check
+	 * @param alias 要查找的别名 the alias to look for
 	 * @since 4.2.1
 	 */
 	public boolean hasAlias(String name, String alias) {
@@ -135,9 +138,10 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	}
 
 	/**
+	 * 检索给定名称的所有别名
 	 * Transitively retrieve all aliases for the given name.
-	 * @param name the target name to find aliases for
-	 * @param result the resulting aliases list
+	 * @param name  要查找别名的目标名称  the target name to find aliases for
+	 * @param result 得到别名列表  the resulting aliases list
 	 */
 	private void retrieveAliases(String name, List<String> result) {
 		this.aliasMap.forEach((alias, registeredName) -> {
