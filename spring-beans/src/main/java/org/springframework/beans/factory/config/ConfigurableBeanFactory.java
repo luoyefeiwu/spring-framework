@@ -31,6 +31,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.StringValueResolver;
 
 /**
+ * 提供配置Factory 的各种方法
+ * 
  * Configuration interface to be implemented by most bean factories. Provides
  * facilities to configure a bean factory, in addition to the bean factory
  * client methods in the {@link org.springframework.beans.factory.BeanFactory}
@@ -51,6 +53,7 @@ import org.springframework.util.StringValueResolver;
 public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, SingletonBeanRegistry {
 
 	/**
+	 * 标准单例范围的范围标识符 "singleton".可以添加自定义范围
 	 * Scope identifier for the standard singleton scope: "singleton".
 	 * Custom scopes can be added via {@code registerScope}.
 	 * @see #registerScope
@@ -58,6 +61,7 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 	String SCOPE_SINGLETON = "singleton";
 
 	/**
+	 * 标准原型范围标识符:"prototype". 可以添加自定义范围
 	 * Scope identifier for the standard prototype scope: "prototype".
 	 * Custom scopes can be added via {@code registerScope}.
 	 * @see #registerScope
@@ -66,23 +70,27 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 
 
 	/**
+	 * 设置此 bean 工厂的父类.
 	 * Set the parent of this bean factory.
 	 * <p>Note that the parent cannot be changed: It should only be set outside
 	 * a constructor if it isn't available at the time of factory instantiation.
-	 * @param parentBeanFactory the parent BeanFactory
-	 * @throws IllegalStateException if this factory is already associated with
+	 * <p>注意 父元素不能改变:他应该只能在外部设置，如果工厂实例化的时，构造函数不可用
+	 * @param parentBeanFactory 父类BeanFactory the parent BeanFactory
+	 * @throws IllegalStateException  如果这个工厂已经有关联了  if this factory is already associated with
 	 * a parent BeanFactory
 	 * @see #getParentBeanFactory()
 	 */
 	void setParentBeanFactory(BeanFactory parentBeanFactory) throws IllegalStateException;
 
 	/**
+	 * 设置 用于 加载 bean 类的 装载器.默认线程上下文装载 
 	 * Set the class loader to use for loading bean classes.
 	 * Default is the thread context class loader.
 	 * <p>Note that this class loader will only apply to bean definitions
 	 * that do not carry a resolved bean class yet. This is the case as of
 	 * Spring 2.0 by default: Bean definitions only carry bean class names,
 	 * to be resolved once the factory processes the bean definition.
+	 * 
 	 * @param beanClassLoader the class loader to use,
 	 * or {@code null} to suggest the default class loader
 	 */
