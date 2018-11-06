@@ -132,15 +132,24 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	}
 
 
-	/** Map from serialized id to factory instance. */
+	/** 
+	 * Map 从序列化Id 到工厂实例
+	 * Map from serialized id to factory instance. 
+	 * */
 	private static final Map<String, Reference<DefaultListableBeanFactory>> serializableFactories =
 			new ConcurrentHashMap<>(8);
 
-	/** Optional id for this factory, for serialization purposes. */
+	/**
+	 * 此工厂可选的可选Id，可用于序列化 
+	 * Optional id for this factory, for serialization purposes.
+	 *  */
 	@Nullable
 	private String serializationId;
 
-	/** Whether to allow re-registration of a different definition with the same name. */
+	/**
+	 * 是否允许 重新注册具有相同名称的不同定义<p>
+	 *  Whether to allow re-registration of a different definition with the same name. 
+	 * */
 	private boolean allowBeanDefinitionOverriding = true;
 
 	/** Whether to allow eager class loading even for lazy-init beans. */
