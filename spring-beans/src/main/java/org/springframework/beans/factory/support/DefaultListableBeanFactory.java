@@ -152,14 +152,23 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	 * */
 	private boolean allowBeanDefinitionOverriding = true;
 
-	/** Whether to allow eager class loading even for lazy-init beans. */
+	/**
+	 * 是否允许渴望的类加载，甚至是 懒加载<p>
+	 *  Whether to allow eager class loading even for lazy-init beans.
+	 *  */
 	private boolean allowEagerClassLoading = true;
 
-	/** Optional OrderComparator for dependency Lists and arrays. */
+	/** 
+	 * 可选的  OrderComparator 用于依赖关系表和数组<p>
+	 * Optional OrderComparator for dependency Lists and arrays. 
+	 * */
 	@Nullable
 	private Comparator<Object> dependencyComparator;
 
-	/** Resolver to use for checking if a bean definition is an autowire candidate. */
+	/**
+	 * 用于检查bean定义是否为autowire候选者的解析器<p>
+	 *  Resolver to use for checking if a bean definition is an autowire candidate. 
+	 * */
 	private AutowireCandidateResolver autowireCandidateResolver = new SimpleAutowireCandidateResolver();
 
 	/** Map from dependency type to corresponding autowired value. */
