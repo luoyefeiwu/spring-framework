@@ -133,40 +133,40 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 
 
 	/** 
-	 * Map ´ÓĞòÁĞ»¯Id µ½¹¤³§ÊµÀı
+	 * Map ï¿½ï¿½ï¿½ï¿½ï¿½Ğ»ï¿½Id ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 	 * Map from serialized id to factory instance. 
 	 * */
 	private static final Map<String, Reference<DefaultListableBeanFactory>> serializableFactories =
 			new ConcurrentHashMap<>(8);
 
 	/**
-	 * ´Ë¹¤³§¿ÉÑ¡µÄ¿ÉÑ¡Id£¬¿ÉÓÃÓÚĞòÁĞ»¯ 
+	 * ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ä¿ï¿½Ñ¡Idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ»ï¿½ 
 	 * Optional id for this factory, for serialization purposes.
 	 *  */
 	@Nullable
 	private String serializationId;
 
 	/**
-	 * ÊÇ·ñÔÊĞí ÖØĞÂ×¢²á¾ßÓĞÏàÍ¬Ãû³ÆµÄ²»Í¬¶¨Òå<p>
+	 * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ÆµÄ²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½<p>
 	 *  Whether to allow re-registration of a different definition with the same name. 
 	 * */
 	private boolean allowBeanDefinitionOverriding = true;
 
 	/**
-	 * ÊÇ·ñÔÊĞí¿ÊÍûµÄÀà¼ÓÔØ£¬ÉõÖÁÊÇ ÀÁ¼ÓÔØ<p>
+	 * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<p>
 	 *  Whether to allow eager class loading even for lazy-init beans.
 	 *  */
 	private boolean allowEagerClassLoading = true;
 
 	/** 
-	 * ¿ÉÑ¡µÄ  OrderComparator ÓÃÓÚÒÀÀµ¹ØÏµ±íºÍÊı×é<p>
+	 * ï¿½ï¿½Ñ¡ï¿½ï¿½  OrderComparator ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<p>
 	 * Optional OrderComparator for dependency Lists and arrays. 
 	 * */
 	@Nullable
 	private Comparator<Object> dependencyComparator;
 
 	/**
-	 * ÓÃÓÚ¼ì²ébean¶¨ÒåÊÇ·ñÎªautowireºòÑ¡ÕßµÄ½âÎöÆ÷<p>
+	 * ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½beanï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªautowireï¿½ï¿½Ñ¡ï¿½ßµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½<p>
 	 *  Resolver to use for checking if a bean definition is an autowire candidate. 
 	 * */
 	private AutowireCandidateResolver autowireCandidateResolver = new SimpleAutowireCandidateResolver();

@@ -58,10 +58,10 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 
 
 	/**
-	 * Ê¹ÓÃ¸ø¶¨×ÊÔ´´´½¨Ò»¸öĞÂµÄXmlBeanFactory£¬¸Ã×ÊÔ´±ØĞë¿ÉÒÔÊ¹ÓÃDOM½øĞĞ½âÎö
+	 * ä½¿ç”¨ç»™å®šèµ„æºåˆ›å»ºä¸€ä¸ªæ–°çš„XmlBeanFactoryï¼Œè¯¥èµ„æºå¿…é¡»å¯ä»¥ä½¿ç”¨DOMè¿›è¡Œè§£æ
 	 * Create a new XmlBeanFactory with the given resource,
 	 * which must be parsable using DOM.
-	 * @param  resource ´Óxml×ÊÔ´ ÖĞ¼ÓÔØ ¶¨ÒåµÄbean   the XML resource to load bean definitions from
+	 * @param  resource ä»xmlèµ„æº ä¸­åŠ è½½ å®šä¹‰çš„bean   the XML resource to load bean definitions from
 	 * @throws BeansException in case of loading or parsing errors
 	 */
 	public XmlBeanFactory(Resource resource) throws BeansException {
@@ -69,11 +69,11 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	}
 
 	/**
-	 * Ê¹ÓÃ¸ø¶¨×ÊÔ´´´½¨Ò»¸öĞÂµÄXmlBeanFactory£¬¸Ã×ÊÔ´±ØĞë¿ÉÒÔÊ¹ÓÃDOM½øĞĞ½âÎö
+	 * ä½¿ç”¨ç»™å®šèµ„æºåˆ›å»ºä¸€ä¸ªæ–°çš„XmlBeanFactoryï¼Œè¯¥èµ„æºå¿…é¡»å¯ä»¥ä½¿ç”¨DOMè¿›è¡Œè§£æ
 	 * Create a new XmlBeanFactory with the given input stream,
 	 * which must be parsable using DOM.
-	 * @param resource ´Óxml×ÊÔ´ ÖĞ¼ÓÔØ ¶¨ÒåµÄbean the XML resource to load bean definitions from
-	 * @param parentBeanFactory ¸¸Ààbean ¹¤³§   parent bean factory
+	 * @param resource ä»xmlèµ„æº ä¸­åŠ è½½ å®šä¹‰çš„bean the XML resource to load bean definitions from
+	 * @param parentBeanFactory çˆ¶ç±»bean å·¥å‚   parent bean factory
 	 * @throws BeansException in case of loading or parsing errors
 	 */
 	public XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory) throws BeansException {
